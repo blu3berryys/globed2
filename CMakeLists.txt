@@ -139,7 +139,7 @@ target_include_directories(${PROJECT_NAME} PRIVATE libs/)
 CPMAddPackage("gh:camila314/uibuilder#cd0f953")
 CPMAddPackage(
     NAME Boost
-    VERSION 1.86.0
+    VERSION 1.87.0
     URL https://github.com/boostorg/boost/releases/download/boost-1.87.0/boost-1.87.0-cmake.7z
     URL_HASH SHA256=61d61a3f33283bab8f3736745a4e47c37141f07e413986cd05d1f942c69d529a
     OPTIONS "BOOST_ENABLE_CMAKE ON" "BOOST_INCLUDE_LIBRARIES describe\\\;stacktrace\\\;thread" # escape with \\\;
