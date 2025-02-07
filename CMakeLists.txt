@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.21)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_VISIBILITY_PRESET hidden)
-project(globed2 VERSION 1.0.1)
+project(globed2 VERSION 1.0.0)
 
 # set ios archs
 if (${CMAKE_SYSTEM_NAME} STREQUAL "iOS")
@@ -91,7 +91,7 @@ file(GLOB_RECURSE SOURCES
 	src/audio/*.cpp
 	src/crypto/*.cpp
 	src/data/*.cpp
-    src/globed/*.cpp
+    	src/globed/*.cpp
 	src/game/*.cpp
 	src/hooks/*.cpp
 	src/managers/*.cpp
@@ -99,7 +99,7 @@ file(GLOB_RECURSE SOURCES
 	src/ui/*.cpp
 	src/util/*.cpp
 	src/main.cpp
-    ${OS_SOURCES}
+    	${OS_SOURCES}
 )
 
 add_library(${PROJECT_NAME} SHARED ${SOURCES})
@@ -136,12 +136,12 @@ target_include_directories(${PROJECT_NAME} PRIVATE src/)
 target_include_directories(${PROJECT_NAME} PRIVATE libs/)
 
 # our favorite libraries
-CPMAddPackage("gh:dankmeme01/uibuilder#c30755a")
+CPMAddPackage("gh:camila314/uibuilder#cd0f953")
 CPMAddPackage(
     NAME Boost
     VERSION 1.86.0
-    URL https://github.com/boostorg/boost/releases/download/boost-1.86.0/boost-1.86.0-cmake.7z
-    URL_HASH SHA256=ee6e0793b5ec7d13e7181ec05d3b1aaa23615947295080e4b9930324488e078f
+    URL https://github.com/boostorg/boost/releases/download/boost-1.87.0/boost-1.87.0-cmake.7z
+    URL_HASH SHA256=61d61a3f33283bab8f3736745a4e47c37141f07e413986cd05d1f942c69d529a
     OPTIONS "BOOST_ENABLE_CMAKE ON" "BOOST_INCLUDE_LIBRARIES describe\\\;stacktrace\\\;thread" # escape with \\\;
 )
 CPMAddPackage("gh:dankmeme01/asp2#71196e5")
@@ -257,7 +257,7 @@ endif()
 CPMAddPackage(
     NAME curl
     GIT_REPOSITORY "https://github.com/curl/curl.git"
-    GIT_TAG "curl-8_11_0"
+    GIT_TAG "curl-8_12_0"
     DOWNLOAD_ONLY YES
 )
 
